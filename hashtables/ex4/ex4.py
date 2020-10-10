@@ -1,8 +1,23 @@
+from unittest.loader import findTestCases
+
+
 def has_negatives(a):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    cache = {}
+    result = []
+    
+    a.sort(reverse = True)
+    
+    for num in a:
+        if num > 0:
+            cache[num] = 0
+        else:
+            if num * -1 in cache:
+                cache[num * -1] = num
+                
+    filtered_cache = [(key, cache[key]) for key in cache if cache[key] !=0]
+    
+    for key, value in filtered_cache:
+        result.append(key)
 
     return result
 
