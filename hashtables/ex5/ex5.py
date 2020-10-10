@@ -1,15 +1,9 @@
-# Your code here
-
-
-
 def finder(files, queries):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    file_cache = {}
+
+    result = [key for key in file_cache if len(file_cache[key]) > 0]
 
     return result
-
 
 if __name__ == "__main__":
     files = [
